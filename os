@@ -307,4 +307,33 @@ for((i=1;i<11;i++))
 do
         echo "$n X $i = " "`expr $n \* $i`"
 done
+
+
+
+program to demonstrate use of fork , join , exec and system calls.
+#include<stdio.h>
+#include<sys/types.h>
+#include<sys/wait.h>
+
+int main()
+{
+    pid -t cpid;
+    if(fork() == 0)
+    {
+        exit(0);
+    }
+    else
+    {
+        cpid = wait(NULL);
+    }
+
+    printf("Parent pid = %d \n" , getpid(1));
+    printf("Child pid = %d \n" , cpid);
+    execu();
+    printf("Hello 2"\n);
+    return 0;
+}
+
+
+
  
