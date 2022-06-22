@@ -336,4 +336,30 @@ int main()
 
 
 
+Simulate FCFS CPU Scheduling algorithm.                                                                                                                                                                        #include<stdio.h>
+int main()
+{
+    int p[10] , burst[10] , a[10] , wait[10] , ta[10];
+    int temp[10];
+    int n,sum=0;
+    printf("Enter number of processes: ");
+    scanf("%d" , &n);
+    printf("Enter the arrival time & burst time: \n");
+
+    for(int i=0;i<n;i++)
+    {
+        printf("Process number is %d" , i);
+        scanf("%d %d" , &a[i] , &burst[i]);
+    }
+
+    for(int i=0;i<n;i++)
+    {
+        sum = sum + burst[i];
+        ta[i] = temp[i] - a[i];
+        wait[i] = ta[i] - burst[i];
+
+        printf("The turnaround & waiting time is %d and %d \n" , ta[i] , wait[i]);
+    }
+    return 0;
+}
  
